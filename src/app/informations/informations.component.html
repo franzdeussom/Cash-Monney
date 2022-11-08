@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="notLog" *ngIf="decisionToRedirect == true; then authentificationErrors else successLogin ">
+    </div>
+
+      <ng-template #authentificationErrors>
+      <span> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
+    </ng-template>
+
+    <ng-template #successLogin> 
+
+      <div>
+        <button (click)="refreshAmount()">Actualiser le solde</button>
+        ajajdada <br>
+        <ul *ngFor="let data of dataUsers">
+            <li> {{ data.email }} </li>
+            <li> {{ data.mdp }} </li>
+        </ul>
+
+        <app-message></app-message>
+      </div>
+
+    </ng-template>
+
+    
+</div>

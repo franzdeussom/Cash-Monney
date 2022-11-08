@@ -1,0 +1,115 @@
+.container{
+    position: relative;
+    margin-top: 7%;
+    align-self: center;
+    width: 40%;
+    height: fit-content;
+    box-shadow: 1px 5px 6px 0.8px;
+    margin-left: 30%;
+    background-color: azure;
+    border-radius: 10px;
+    justify-content: center;
+    a{
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;
+    }
+    span{
+        color: red;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        margin: 15px;
+    }
+    .loginBtn{
+        height: fit-content;
+        padding: 15px;
+        width: fit-content;
+        background-color: rgb(11, 25, 66);
+        color: azure;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        float: float;
+        font-size: 20px;
+        margin-left: 1%;
+        margin-top: 10px;
+    }
+    .loginBtn:hover{
+        background-color: rgb(38, 38, 235);;
+    }
+    .rgsBtn{
+        height: fit-content;
+        padding: 15px;
+        width: fit-content;
+        background-color: rgb(212, 113, 0);
+        color: azure;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        text-decoration: none;
+        float: right;
+        font-size: 20px;
+        margin-right: 5%;
+        margin-top: 10px;
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+    .rgsBtn:hover{
+        background-color: rgb(103, 207, 55);
+    }
+    .btn{
+        margin-top: 25px;
+    }
+    label{
+        font-weight: bold;
+
+    }
+    .notif{
+        margin-top: 10px;
+        margin-left: 35px;
+        text-align: center;
+        width: 90%;
+        height: 4vh;
+        font-size: 17px;
+        color: white;
+        border-radius: 10px;
+        background-color: rgb(161, 10, 30); 
+        border-left-width: 15px;
+        border-left-color: rgb(0, 255, 242);
+        padding: 10px;   
+    }
+    .notifV{
+        margin-top: 10px;
+        margin-left: 35px;
+        text-align: center;
+        width: 90%;
+        height: 4vh;
+        font-size: 17px;
+        color: white;
+        border-radius: 10px;
+        background-color: rgb(21, 204, 97); 
+        border-left-width: 15px;
+        border-left-color: rgb(0, 255, 242);
+        padding: 10px;  
+    }
+    .inputEmail{
+        width: 90%;
+        padding: 10px;
+        margin-top: 10px;
+        border-top: none;
+        border-left-width: 10px;
+        border-left-color: royalblue;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        border-right: none;
+        border-bottom-color: royalblue;
+        font-size: 18px;
+        border-top-right-radius: 10px;
+        color: black;
+    }
+    
+}

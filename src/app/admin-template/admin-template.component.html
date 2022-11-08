@@ -1,0 +1,56 @@
+<!--<div class="notification" *ngIf="!httpError; httpError">
+        <div class="httpError">
+            <span> serveur inaccessible </span>
+        </div>
+</div>
+-->
+<div class="container ">
+    <div *ngIf="isAdmin == false; then showErrorsLogin else showData">
+    </div>
+    <ng-template #showErrorsLogin>
+        <span class="notLog"> Contenue restreint, Tokken non valide connecter vous chers Administrateur !</span>
+    </ng-template>
+    <ng-template #showData>
+        <span class="isLog"><i class="fa fa-users" aria-hidden="true"></i>
+            <span class="numberUsers">{{ users.length }}</span> Utilisateurs</span><br>
+                    <button (click)="getUsers()" class="refresh">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                        Actualise la liste
+                    </button>
+                    <button (click)="getUsers()" class="msg">
+                        <i class="fa fa-comment" aria-hidden="true"></i>
+                        Consulter les messages
+                    </button>
+    
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Email</th>
+                    <th>Nom </th>
+                    <th>Prenom</th>
+                    <th>Phone</th>
+                    <th>mot de Passe</th>
+
+                </tr>
+                <tr *ngFor="let data of users; let indexOfElment=index;">
+                    <td> {{ indexOfElment+1 }} </td>
+                    <td class="email"> {{ data.email }} </td>
+                    <td class="field"> {{ data.nom }} </td>
+                    <td class="field"> {{ data.prenom }} </td>
+                    <td class="field"> {{ data.phone}} </td>
+                    <td class="pass"> {{ data.mdp }} </td>
+                    <td> <button (click)="usersLock(data)" class="lock"><i class="fa fa-user-times" aria-hidden="true"></i>
+                        Bloquer </button>
+                        <button (click)="usersLock(data)" class="seeMore">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                            Voir plus</button>
+                    <button (click)="deleteUsers(data.email)" class="delete"><i class="fa fa-times" aria-hidden="true"></i>Supprimer</button> </td>
+
+                </tr>
+            </table> 
+       <ul >
+            
+        </ul>
+        
+    </ng-template>
+</div>

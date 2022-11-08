@@ -1,0 +1,158 @@
+.container{
+    position: relative;
+    margin-top: 5%;
+    align-self: center;
+    width: 90%;
+    height: fit-content;
+    box-shadow: 1px 5px 6px 0.8px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: azure;
+    border-radius: 10px;
+    justify-content: center; 
+    overflow-y: scroll; 
+    .notLog{
+        position: relative;
+        color: red;
+        margin-top: 5%; 
+        margin: 5px;
+        font-size: 20px;
+        top: 5%;
+        margin-left: 7%;
+    } 
+    .numberUsers{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .msg{
+        position: relative;
+        top: 0;
+        height: fit-content;
+        padding: 10px;
+        background-color: rgb(58, 58, 219);
+        color: white;
+        width: fit-content;
+        margin: 5px;
+        float: right;
+        margin-top: 5px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    .move{
+        text-align: left;
+    }
+    .isLog{
+        position: inherit;
+        margin-top: 7%;
+        color: rgb(23, 86, 158);
+        font-size: 20px;
+        margin-left: 5%;
+    }
+    .refresh{
+        position: relative;
+        top: 0;
+        height: fit-content;
+        padding: 10px;
+        background-color: rgb(58, 58, 219);
+        color: white;
+        width: fit-content;
+        margin: 5px;
+        float: right;
+        margin-top: 5px;
+        margin-right: 0px;
+        border: none;
+        border-radius: 10px;
+        font-size: 17px;
+        cursor: pointer;
+    }
+    .refresh:hover{
+        background-color: rgb(87, 115, 207);
+    }
+    .delete{
+        height: fit-content;
+        width: fit-content;
+        margin: 5px;
+        padding: 7px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+        background-color: red;
+        cursor: pointer;
+    }
+    .seeMore{
+        height: fit-content;
+        width: fit-content;
+        margin: 5px;
+        padding: 7px;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+        background-color: rgb(175, 170, 170);
+        cursor: pointer;
+    }
+    .seeMore:hover{
+        background-color: rgb(41, 89, 131);
+        color: wheat;
+    }
+    .delete:hover{
+           background-color: rgb(172, 14, 14);
+    }
+    .lock{
+        height: fit-content;
+        width: fit-content;
+        margin: 5px;
+        padding: 7px;
+        border: none;
+        border-radius: 10px;
+        color: rgb(253, 250, 250);
+        font-size: 15px;
+        background-color: rgb(61, 3, 3);
+        cursor: pointer;
+    }
+
+    table{
+        width: 100%;
+        margin-top: 5%;
+        th{
+            text-align: center;
+            color: white;
+            padding: 15px;
+            background-color: rgb(42, 42, 133);
+        }
+        td{
+            text-align: center;
+        }
+        .email, .field, .pass{
+            background-color: rgb(228, 211, 211);
+        
+        }
+    }
+
+
+
+}
+.notification{
+    position: relative;
+    margin-top:  5%;
+    background-color: rgba(143, 19, 19, 0.493);
+    width: 50%;
+    height: 10vh;
+    opacity: 0.8;
+    border-left-width: 5%;
+    border-left-color: red;
+    margin-left: 25%;
+    span{
+        position: relative;
+        color: rgb(255, 24, 24);
+        font-size: 25px;
+        margin-top: 5%;
+        margin-right: 15px;
+        margin-left: 350px;
+        
+    }
+   
+  }  

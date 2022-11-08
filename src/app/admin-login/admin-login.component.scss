@@ -1,0 +1,91 @@
+.container{
+    position: relative;
+    margin-top: 7%;
+    align-self: center;
+    width: 50%;
+    height: 35vh;
+    box-shadow: 1px 5px 6px 0.8px;
+    margin-left: 25%;
+    margin-right: 30%;
+    background-color: azure;
+    border-radius: 10px;
+    justify-content: center; 
+    a{
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15%;
+        margin-top: 1%;
+        float: right;
+    }
+    .loginBtn{
+        height: fit-content;
+        padding: 15px;
+        width: fit-content;
+        background-color: rgb(11, 25, 66);
+        color: azure;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 20px;
+        margin-left: 35%;
+        margin-top: 10px;
+    }
+    .loginBtn:hover{
+        background-color: rgb(38, 38, 235);
+    }
+    .choiceBloc{
+        display: flex;
+        margin-top: 55px;
+        hr{
+            margin: auto;
+        
+        }
+    }
+
+    .rgsBtn:hover{
+        background-color: rgb(103, 207, 55);
+    }
+    label{
+        font-weight: bold;
+        margin-left: 9%;
+       
+    }
+    hr{
+        opacity: 0.3;
+    }
+    i{
+        margin-right: 12px;
+    }
+    span{
+        color: red;
+        font-size: 12px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        margin: 15px;
+    }
+    abbr{
+        cursor: pointer;
+    }
+
+    .checkbox{
+        margin-top: 15px;
+        margin-left: 9%;
+        margin-bottom: 10px;
+    }
+
+    .inputEmail{
+        width: 75%;
+        padding: 7px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-color: rgb(46, 46, 185);
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 18px;
+        margin-left: 9%;
+        color: black;
+        
+    }
+    }

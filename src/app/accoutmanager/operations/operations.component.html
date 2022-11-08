@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="notLog" *ngIf="decisionToRedirect == true; then authentificationErrors else successLogin ">
+  </div>
+
+    <ng-template #authentificationErrors>
+    <span> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
+  </ng-template>
+
+  <ng-template #successLogin> 
+      
+    <div *ngIf="decisionToRedirect == false">
+      a
+      <div>
+        it's work !
+      </div>
+      <app-message></app-message>
+    </div>
+
+  </ng-template>
+
+  
+</div>

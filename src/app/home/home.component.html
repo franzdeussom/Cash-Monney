@@ -1,0 +1,10 @@
+<p *ngIf="decisionToStay == 1">home works!</p>
+<div class="container">
+    <div class="notLog" *ngIf="decisionToRedirect == true">
+      <span> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
+    </div>
+  
+</div>
+<div *ngIf="decisionToRedirect == false">
+<app-message></app-message>
+</div>

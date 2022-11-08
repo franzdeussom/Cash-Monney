@@ -1,0 +1,47 @@
+<div class=" container ">
+    <div *ngIf="errorsOnSubmite" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+             Renseigner correctement tous les champs !</div>
+
+             <div *ngIf="alreadyUsers" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+                Un utilisateur posede deja cette Email !</div>
+
+                <div *ngIf="errorsServer" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+                    Erreur Interne du server !</div>
+
+    <div *ngIf="registerStatut" class="notifV"><i class="fa fa-check" aria-hidden="true"></i>
+        Compte cree avec succes, connecter vous et profiter des Gains !</div>
+    <fieldset>
+        <legend> <em>Creation de compte </em></legend>
+    <form method="post" [formGroup]="registerForm" (ngSubmit)="register()">
+               <div class="notifCreateAccout" *ngIf="accountCreated">Compte Cree avec succes, connecter et vous et commencer a epargner !</div> 
+        <label for="email">Email: </label><br>
+        <input type="email" placeholder="E-mail" formControlName="email" id="email" class="inputEmail"><br>
+        <span *ngIf="email==''">(Champs obligatoire !)</span><br>
+        
+        <label for="name">Nom: </label><br>
+        <input type="text" formControlName="name" minlength="3" placeholder="Nom" id="name" class="inputEmail"><br>
+        <span *ngIf="name==''">(Champs obligatoire !)</span><br>
+
+        <label for="surname">Prenom: </label><br>
+        <input type="text" formControlName="surname" placeholder="Prenom" minlength="3"  id="surname" class="inputEmail"><br>
+        <span *ngIf="surname==''">(Champs obligatoire !)</span><br>
+        
+        <label for="phone">Tel: </label><br>
+        <input type="number" formControlName="tel" placeholder="Telephone" minlength="9" id="phone" class="inputEmail"><br>
+        <span *ngIf="phone==''">(Champs obligatoire !)</span><br>
+
+        <label for="pwd">Mot de passe: </label><br>
+        <input [type]="type" formControlName="pwd" placeholder="Mot de passe" minlength="5" id="surname" class="inputEmail"><br>
+        <span *ngIf="pass==''">(Champs obligatoire !)</span><br>
+
+        <input type="checkbox" class="checkbox" (click)="showPassword()"> <abbr> Afficher le mot de passe </abbr><br>
+
+        <div class="btn">
+        <button class="rgsBtn" (click)="redirectToLogin()">Deja un compte se connecter <i class="fas fa-unlock"></i> </button>
+       <button class="loginBtn" type="submit">Creer un compte CashMonney <i class="fas fa-check"></i></button>
+        </div>
+        <pre></pre>
+
+    </form>          
+    </fieldset>
+</div>
