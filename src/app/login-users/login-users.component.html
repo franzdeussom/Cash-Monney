@@ -13,15 +13,15 @@
                    Echec D'authentification, email ou mot de passe incorrect !</div>
             <label for="email">Email: </label><br>
             <input type="email" name="email"  minlength="3" formControlName="email" id="email" class="inputEmail" placeholder="Entrer votre adressse email"><br>
-            <span *ngIf="email=='' ">(Champ obligatoire)</span><br>
+            <span *ngIf="formLogin.controls['email'].dirty && formLogin.controls['email'].errors ">(Champ obligatoire)</span><br>
     
             <label for="pwd">Mot de passe: </label><br>
             <input [type]="inputType" formControlName="pass" name="pwd" placeholder="Entrer votre mot de passe" id="surname" class="inputEmail"><br>
-            <span *ngIf="pass=='' ">(Champ obligatoire)</span><br>
+            <span *ngIf="formLogin.controls['pass'].dirty && formLogin.controls['pass'].errors ">(Champ obligatoire)</span><br>
                 
             <input type="checkbox" class="checkbox" (click)="showPassword()"> <abbr (click)="showPassword()"> Afficher le mot de passe </abbr><br>
     
-            <button type="submit" class="loginBtn">Se connecter <i class="fas fa-unlock"></i> </button><br>
+            <button type="submit" class="loginBtn" >Se connecter <i class="fas fa-unlock"></i> </button><br>
             <span class="resetPass"> <a href="" routerLink="resetpass">Mot de passe oublie ?</a> </span><br>
             <div class="choiceBloc">
                 <hr width="300" /> 

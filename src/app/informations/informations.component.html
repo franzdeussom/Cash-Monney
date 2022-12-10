@@ -3,18 +3,46 @@
     </div>
 
       <ng-template #authentificationErrors>
-      <span> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
+      <span class="notLog"> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
     </ng-template>
 
     <ng-template #successLogin> 
 
       <div>
-        <button (click)="refreshAmount()">Actualiser le solde</button>
-        ajajdada <br>
-        <ul *ngFor="let data of dataUsers">
-            <li> {{ data.email }} </li>
-            <li> {{ data.mdp }} </li>
-        </ul>
+      
+          <div class="card">
+              <div class="cardID">
+               <span class="idLabel"> Identifiant Email :</span> <span class="id"> {{ dataUsers[0].email }} </span>
+               <span class="idLabel"> Identifiant Compte :</span> <span class="id"> {{ dataUsers[0].id_account }} </span>
+              </div> 
+              <table>
+                <tr>
+                  <td><span class="details"> Nom : </span> <br></td>
+                  <td><span class="details info">{{ dataUsers[0].nom }} </span> </td>
+    
+                </tr>
+                <tr>
+                  <td><span class="details">Prenom : </span>  </td>
+                  <td><span class="details info"> {{ dataUsers[0].prenom }} </span> </td>
+                </tr>
+                <tr>
+                  <td><span class="details">Telephone :</span> </td>
+                  <td><span class="details info">  {{ dataUsers[0].tel }} </span> </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td align="center"><button>Modifier</button></td>
+                </tr>
+              </table>
+              
+            <div class="footerAmount">
+             <span class="xx"> Solde :</span> <span class="detailsAmount"> <em>{{ dataUsers[0].amount }} XAF </em></span> 
+            </div>
+          </div>
 
         <app-message></app-message>
       </div>

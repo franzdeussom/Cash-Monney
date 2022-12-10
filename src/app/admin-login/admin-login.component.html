@@ -1,20 +1,24 @@
 <div class="container">
-    
+    <div *ngIf="authentificationErrors" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+        pseudo ou mot de passe incorrect!</div>
+
+        <div *ngIf="fieldErrors" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+           Veuillez remplir tous les champs !</div>
 
         <form method="post" [formGroup]="registerForm" (ngSubmit)="login()">
              <div class="notification">
              </div>
             <label for="email">Admin Pseudo: </label><br>
             <input type="email" formControlName="pseudo"  email="" id="email" class="inputEmail" placeholder="Entrer votre pseudo"><br>
-            <span *ngIf="registerForm.untouched || registerForm.invalid">(Champ obligatoire)</span><br>
+            <span *ngIf="registerForm.controls['pseudo'].dirty && registerForm.controls['pseudo'].errors ">(Champ obligatoire)</span><br>
              
             <label for="pwd">Mot de passe: </label><br>
             <input [type]="inputType" formControlName="mpass" min="6" placeholder="Entrer votre mot de passe" id="pass" class="inputEmail"><br>
-            <span *ngIf="registerForm.invalid">(Champ obligatoire)</span><br>
+            <span *ngIf="registerForm.controls['mpass'].dirty && registerForm.controls['mpass'].errors ">(Champ obligatoire)</span><br>
                 
             <input type="checkbox" class="checkbox" (click)="showPassword()"> <abbr> Afficher le mot de passe </abbr><br>
     
-            <button type="submit" [disabled]="registerForm.invalid" class="loginBtn">Se connecter <i class="fas fa-unlock"></i> </button><br>
+            <button type="submit" class="loginBtn">Se connecter <i class="fas fa-unlock"></i> </button><br>
             <span class="resetPass"> <a href="" routerLink="resetpass">Mot de passe oublie ?</a> </span><br>
             <pre></pre>
             

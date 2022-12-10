@@ -61,12 +61,11 @@ export class InformationsComponent implements OnInit {
       const val = JSON.stringify(email);
     
     /*this.dataUser.getUserData()*/
-    this.dataUser.getUserData().subscribe((data)=>{
+    this.dataUser.getUserData(email).subscribe((data: any)=>{
       this.dataUsers = data;
-      console.log(data.email, data.amount);
-      alert(this.dataUsers);
+      console.log(data);
+  
         if(data.email == localStorage.getItem('email')){
-          alert('ok');
           console.log(data.email, data.mdp);
           this.refreshAmount();
         }

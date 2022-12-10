@@ -3,11 +3,12 @@
    <span class="tilte"> Ecrire a l'equipe <i> CashMonney </i></span>
    <div class="message">
        
-        <form action="post">
+        <form action="post" [formGroup]="formMessage">
             <label for="senders">Votre adresse:</label><br>
-            <input type="text" disabled [value]="currentUsers" >
-            <textarea name="message" id="msg" placeholder="Ecrire ici..." cols="36"></textarea>
-            <button>Envoyer</button>
+            <input type="text" disabled="true" [value]="currentUsers" >
+            <textarea name="message" id="msg" formControlName="message" placeholder="Ecrire ici..." cols="36"></textarea>
+             <span *ngIf="formMessage.controls['message'].dirty && formMessage.hasError('required', 'message')"> Veuiller remlir tous les champs</span>
+            <button (click)="sendMessage()" [disabled]="!formMessage.valid">Envoyer</button>
         </form>
     </div>              
 </div>

@@ -11,7 +11,7 @@
 
     try{
 
-$query = $conn->prepare("SELECT * FROM CashMonney.USERS");
+$query = $conn->prepare("SELECT USERS.email, USERS.nom, USERS.prenom, USERS.tel, USERS.mdp, SAVING_ACCOUNT.amount FROM CashMonney.USERS join CashMonney.SAVING_ACCOUNT WHERE email = fk_depossant");
 $query->execute();
 $getData = $query->fetchAll();
 

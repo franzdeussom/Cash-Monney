@@ -9,11 +9,10 @@ session_start();
     
     try{
         $email= $_SESSION['id'];
-        echo $email;
-
-        $query = $conn->prepare("SELECT USERS.email, USERS.nom, USERS.prenom, USERS.phone, USERS.mdp, SAVING_ACCOUNT.amount FROM CashMonney.USERS, CashMonney.SAVING_ACCOUNT WHERE USERS.email = '$email'");
+    
+        $query = $conn->prepare("SELECT USERS.email, USERS.nom, USERS.prenom, USERS.tel, USERS.mdp, SAVING_ACCOUNT.id_account ,SAVING_ACCOUNT.amount  FROM CashMonney.USERS join CashMonney.SAVING_ACCOUNT WHERE SAVING_ACCOUNT.fk_depossant = '$email' AND USERS.email = '$email'");
         $query->execute();
-        $dataUser = $query->fetchAll(PDO::FETCH_ASSOC);
+        $dataUser = $query->fetchAll();
 
         if($query){
 

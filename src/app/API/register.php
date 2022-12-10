@@ -33,7 +33,7 @@ try{
 
     if($verif < 1){
 
-        $query = $conn->prepare('INSERT INTO CashMonney.USERS(email, nom, prenom, phone, mdp ) VALUES(
+        $query = $conn->prepare('INSERT INTO CashMonney.USERS(email, nom, prenom, tel, mdp ) VALUES(
             :email, :nom, :prenom, :phone, :mdp) ');
             $query->execute([
                 'email'=> $email,
@@ -46,7 +46,7 @@ try{
             $defaultAmount = 0.00;
             $deposatn = $email;
             
-            $sql = $conn->prepare("INSERT INTO CashMonney.SAVING_ACCOUNT(amount, fk_idDepossant) VALUES(:amount, :fk_deposant) ");
+            $sql = $conn->prepare("INSERT INTO CashMonney.SAVING_ACCOUNT(amount, fk_depossant) VALUES(:amount, :fk_deposant) ");
             $sql->execute([
                   'amount'=> $defaultAmount,
                   'fk_deposant'=> $email

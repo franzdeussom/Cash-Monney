@@ -19,4 +19,71 @@
         top: 25%;
         margin-left: 7%;
     } 
+    .card{
+        width: 100%;
+        height: 20vh;
+        border-radius: 35px;
+        .cardID{
+           height: 8vh;
+           background-color: rgb(38, 38, 114);
+           color: white;
+           .id{
+                color: greenyellow;
+                font-size: 21px;
+           }
+           .idLabel{
+            position: relative;
+            margin-top: 25px;
+            margin-left: 25px;
+            font-size: 22px;
+           }
+           
+        }
+        .footerAmount{
+            width: 100%;
+            height: 5vh;
+            position: absolute;
+            bottom: 0;
+            border-bottom: 0;
+            background-color: cadetblue;
+            .detailsAmount{
+                font-size: 30px;
+                color: greenyellow;
+                
+            }
+            .xx{
+                margin: 50px;
+                font-size: 25px;
+                color: white;
+            }
+           }
+           table{
+            width: 100%;
+            margin-top: 25px;
+            button{
+                width: fit-content;
+                height: fit-content;
+                padding: 7px;
+                border: none;
+                color: white;
+                background-color: blueviolet;
+                border-radius: 11px;
+                font-size: 22px;
+                
+            }
+            button:hover{
+                background-color: rgb(165, 103, 223);
+            }
+           }
+           .details{
+            margin-top: 50px;
+            margin-left: 50px;
+            padding-top: 20px;
+          
+            font-size: 24px;
+           }
+           .details.info{
+            color: greenyellow;
+           }
+    }
 }

@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
     this.decisionToStay = this.verif.getVal();
     if(this.decisionToStay == 1 && localStorage.getItem('email')!=null){
       console.log('ok');
-      alert('ok')
     }else{
       this.decisionToRedirect = true;
       setTimeout(() => {

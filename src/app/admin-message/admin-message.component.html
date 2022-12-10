@@ -1,0 +1,28 @@
+
+<div class="container">
+    
+<div class="option">
+    <div class="clean">
+        <button (click)='deleteAll()' class="delete">Supprimer tous</button>
+   
+        <button (click)="loadMessage()" class="load">Actualise</button>
+    </div>
+    <div class="msgNumber">
+        <button class="load" (click)="zuruck()">Retour</button>
+        <span> {{ listMessage.length }} Messages </span>
+    </div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Utilisateurs</th>
+            <th>Message</th>
+        </tr>
+        <tr *ngFor="let data of listMessage">
+         <td> {{ data.id }}  |</td>
+         <td>| {{ data.fk_senders }} |</td>
+         <td>| {{ data.libele }} |</td>
+         <td><button class="delete" (click)="deleteSelect(data.id)">Supprimer</button> </td>
+        </tr>
+    </table>
+</div>
+</div>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { LogoutService } from '../services/logout.service';
 import { UserLoginService } from '../services/user-login.service';
 import { TestService } from '../test.service';
 
@@ -25,7 +26,8 @@ export class LoginUsersComponent implements OnInit {
   constructor( private route: Router, 
                private authentificated: TestService,
                private form: FormBuilder,
-               private authentifation: UserLoginService 
+               private authentifation: UserLoginService,
+               private logOut: LogoutService
                ) { }
 
   ngOnInit(): void {
@@ -97,8 +99,12 @@ export class LoginUsersComponent implements OnInit {
     }
  }
  logout(){
-  localStorage.removeItem('email');
-  this.authentificated.setNumber(0);
-  this.route.navigateByUrl('/login');
+  this.logOut.logOut().subscribe((data: any)=>{
+      if(data.success){
+        localStorage.removeItem('email');
+        this.authentificated.setNumber(0);
+        this.route.navigateByUrl('/home');
+      }
+  } );
  }
 }

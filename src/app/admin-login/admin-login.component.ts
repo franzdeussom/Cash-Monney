@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormBuilder, FormGroup, MinValidator, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CheckAdminLoginService } from '../check-admin-login.service';
+import { AdminLoginService } from '../services/admin-login.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,12 +12,19 @@ import { EmailValidator, FormBuilder, FormGroup, MinValidator, Validators } from
 export class AdminLoginComponent implements OnInit {
   inputType!: string;
   registerForm!: FormGroup;
-  constructor( private formBuilder: FormBuilder) { }
+  authentificationErrors!: boolean;
+  fieldErrors!: boolean;
+
+  constructor( private formBuilder: FormBuilder,
+               private checkAdmin: AdminLoginService,
+               private Tokken : CheckAdminLoginService,
+               private route: Router
+               ) { }
 
   ngOnInit(): void {
     this.registerForm= this.formBuilder.group({
       pseudo : ['' , Validators.required],
-      mpass: ['', [Validators.required, Validators.minLength(6)]]
+      mpass: ['', [Validators.required, Validators.minLength(5)]]
     });
     
     this.inputType = 'password';
@@ -33,13 +43,28 @@ export class AdminLoginComponent implements OnInit {
     }
 
   login(){
-    alert('ok');
+
     if(this.registerForm.invalid){
+      this.fieldErrors = true;
+      setTimeout(() => {
+      this.fieldErrors = false;
+      }, 3000);
       return;
     }
     const dataAdmin = JSON.stringify(this.registerForm.value);
-    console.log(dataAdmin)
-     
-  }
+  
+    this.checkAdmin.Verify(dataAdmin).subscribe((data : any)=>{
+      if(data.isAdmin){
+          this.Tokken.setTokken(1); 
+          this.route.navigateByUrl('/admin');
+      }else{
+        this.authentificationErrors = true;
+        setTimeout(() => {
+          this.authentificationErrors = false;  
+        }, 3000);
+        
+      }
+    });  
+}
 
 }

@@ -16,23 +16,23 @@
                <div class="notifCreateAccout" *ngIf="accountCreated">Compte Cree avec succes, connecter et vous et commencer a epargner !</div> 
         <label for="email">Email: </label><br>
         <input type="email" placeholder="E-mail" formControlName="email" id="email" class="inputEmail"><br>
-        <span *ngIf="email==''">(Champs obligatoire !)</span><br>
+        <span *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].errors ">(Champs obligatoire !)</span><br>
         
         <label for="name">Nom: </label><br>
         <input type="text" formControlName="name" minlength="3" placeholder="Nom" id="name" class="inputEmail"><br>
-        <span *ngIf="name==''">(Champs obligatoire !)</span><br>
+        <span *ngIf="registerForm.controls['name'].dirty && registerForm.controls['name'].errors ">(Champs obligatoire !)</span><br>
 
         <label for="surname">Prenom: </label><br>
         <input type="text" formControlName="surname" placeholder="Prenom" minlength="3"  id="surname" class="inputEmail"><br>
-        <span *ngIf="surname==''">(Champs obligatoire !)</span><br>
+        <span *ngIf="registerForm.controls['surname'].dirty && registerForm.controls['surname'].errors ">(Champs obligatoire !)</span><br>
         
         <label for="phone">Tel: </label><br>
         <input type="number" formControlName="tel" placeholder="Telephone" minlength="9" id="phone" class="inputEmail"><br>
-        <span *ngIf="phone==''">(Champs obligatoire !)</span><br>
+        <span *ngIf="registerForm.controls['tel'].dirty && registerForm.controls['tel'].errors ">(Champs obligatoire !)</span><br>
 
         <label for="pwd">Mot de passe: </label><br>
         <input [type]="type" formControlName="pwd" placeholder="Mot de passe" minlength="5" id="surname" class="inputEmail"><br>
-        <span *ngIf="pass==''">(Champs obligatoire !)</span><br>
+        <span *ngIf="registerForm.controls['pwd'].dirty && registerForm.controls['pwd'].errors ">(Champs obligatoire !)</span><br>
 
         <input type="checkbox" class="checkbox" (click)="showPassword()"> <abbr> Afficher le mot de passe </abbr><br>
 

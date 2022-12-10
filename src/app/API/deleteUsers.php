@@ -16,13 +16,11 @@
 
 try{
     $email = $data;
-    
-    $queryD = $conn->prepare("DELETE FROM CashMonney.SAVING_ACCOUNT WHERE fk_idDepossant = '$email' ");
-    $queryD->execute();
+
     $query = $conn->prepare("DELETE FROM CashMonney.USERS WHERE USERS.email = '$email' ");
     $query->execute();
 
-    if($query && $queryD){
+    if($query){
         $response = json_encode(array(
             'confirm'=>true,
             'success' =>true

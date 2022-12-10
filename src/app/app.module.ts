@@ -14,6 +14,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { OperationsComponent } from './accoutmanager/operations/operations.component';
 import { MessageComponent } from './message/message.component';
+import { AdminMessageComponent } from './admin-message/admin-message.component';
 
 export const path: Routes = [
   {
@@ -43,7 +44,11 @@ export const path: Routes = [
   {
     path: 'adminlogin',
     component: AdminLoginComponent
-  }, 
+  },
+  {
+    path: 'adminMessage',
+    component: AdminMessageComponent
+  },
   {
     path: '**',
     redirectTo: 'home'
@@ -61,7 +66,8 @@ export const path: Routes = [
     AdminLoginComponent,
     AdminTemplateComponent,
     OperationsComponent,
-    MessageComponent
+    MessageComponent,
+    AdminMessageComponent
   ],
   imports: [
     BrowserModule,

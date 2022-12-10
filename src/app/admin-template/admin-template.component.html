@@ -17,7 +17,7 @@
                         <i class="fa fa-refresh" aria-hidden="true"></i>
                         Actualise la liste
                     </button>
-                    <button (click)="getUsers()" class="msg">
+                    <button (click)="consulMessage()" class="msg">
                         <i class="fa fa-comment" aria-hidden="true"></i>
                         Consulter les messages
                     </button>
@@ -30,6 +30,8 @@
                     <th>Prenom</th>
                     <th>Phone</th>
                     <th>mot de Passe</th>
+                    <th>Montant en compte</th>
+
 
                 </tr>
                 <tr *ngFor="let data of users; let indexOfElment=index;">
@@ -37,8 +39,9 @@
                     <td class="email"> {{ data.email }} </td>
                     <td class="field"> {{ data.nom }} </td>
                     <td class="field"> {{ data.prenom }} </td>
-                    <td class="field"> {{ data.phone}} </td>
+                    <td class="field"> {{ data.tel}} </td>
                     <td class="pass"> {{ data.mdp }} </td>
+                    <td class="pass"> {{ data.amount }} FCFA</td>
                     <td> <button (click)="usersLock(data)" class="lock"><i class="fa fa-user-times" aria-hidden="true"></i>
                         Bloquer </button>
                         <button (click)="usersLock(data)" class="seeMore">

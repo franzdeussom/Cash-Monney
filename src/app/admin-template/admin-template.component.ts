@@ -18,6 +18,7 @@ export class AdminTemplateComponent implements OnInit {
     error!: any;
     textLock!: string;
     simpleGroup!: FormGroup;
+    
   constructor(
     private getUsersFromApi: GetAllUsersService,
     private checkLogIn: CheckAdminLoginService,
@@ -29,7 +30,7 @@ export class AdminTemplateComponent implements OnInit {
   ngOnInit(): void {
     this.textLock = 'Bloquer';
     this.isAdmin = false;
-    if( this.checkLogIn.getTokken() == 0){
+    if( this.checkLogIn.getTokken() == 1){
     this.isAdmin = true;
     //setInterval(()=> {
     this.getUsers();
@@ -86,5 +87,8 @@ export class AdminTemplateComponent implements OnInit {
       else{
         alert('operation anuler');
       }
+  }
+  consulMessage(){
+    this.route.navigateByUrl('/adminMessage');
   }
 }

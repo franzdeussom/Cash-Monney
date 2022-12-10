@@ -6,12 +6,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GetuserService {
- 
+  baseUrl = 'http://localhost:3305/getdatauser.php';
+  
   constructor( private http : HttpClient) { }
   
-  getUserData(): Observable<any>{
-     const baseUrl = 'http://localhost:3305/getdatauser.php';
-      return this.http.get<any>(baseUrl);
+  getUserData(data: any): Observable<any>{
+      return this.http.post<any>(this.baseUrl, data, {withCredentials: true});
   }
 
 }

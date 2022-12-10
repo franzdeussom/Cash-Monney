@@ -1,0 +1,84 @@
+.container{
+    position: relative;
+    margin-top: 7%;
+    align-self: center;
+    width: 70%;
+    height: fit-content;
+    margin-bottom: 80px;
+    box-shadow: 1px 5px 6px 0.8px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: azure;
+    border-radius: 10px;
+    justify-content: center;  
+    .clean{
+        position: relative;
+        padding: 20px;
+        float: right;
+        .delete{
+            color: white;
+            background-color: rgb(238, 37, 37);
+            font-size: 17px;
+            width : fit-content;
+            height: fit-content;
+            padding: 7px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: none;   
+            border-radius: 20px;
+        }
+        .load{
+            color: white;
+            background-color: rgb(37, 74, 238);
+            font-size: 17px;
+            width : fit-content;
+            height: fit-content;
+            padding: 7px;
+            margin-left: 10px;
+            border: none;   
+            cursor: pointer;
+            border-radius: 20px;
+        }
+    }
+    .delete{
+            color: white;
+            background-color: rgb(238, 37, 37);
+            font-size: 17px;
+            width : fit-content;
+            height: fit-content;
+            padding: 5px;
+            margin-left: 10px;
+            border: none;   
+            cursor: pointer;
+            border-radius: 20px;
+    }
+    table{
+        width: 100%;
+        margin-top: 5%;
+        height: 100%;
+        th{
+            text-align: center;
+            color: white;
+            padding: 15px;
+            background-color: rgb(42, 42, 133);
+        }
+        td{
+            text-align: center;
+            background-color: rgb(228, 211, 211);
+            font-size: 24px;
+        }
+    }
+
+    .load{
+        color: white;
+        background-color: rgb(37, 74, 238);
+        font-size: 17px;
+        width : fit-content;
+        height: fit-content;
+        padding: 7px;
+        margin-left: 10px;
+        border: none;   
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}
