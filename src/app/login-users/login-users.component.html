@@ -35,7 +35,37 @@
     <ng-template #realTemplate> 
 
          <button class="logout" (click)="logout()">Se Deconnecter</button>
+        <div class="overplay">
+            <table class="tableData">
+                <thead>
+                    <td><img src="" alt="profile" width="100px" height="200px"></td>
+                    <td align="right">  
+                        <table class="scndTble">
+                            <tr>
+                                <td> {{ dataUsers[0].email }} </td>
+                            </tr>
 
+                            <tr>
+                                <td> {{ dataUsers[0].nom }} </td>
+                            </tr>
+
+                            <tr>
+                                <td>{{ dataUsers[0].prenom }} </td>
+                            </tr>
+
+                            <tr>
+                                <td> {{ dataUsers[0].tel }} </td>
+                            </tr>
+
+                            <tr>
+                                <td><button class="trans" (click)="transaction()">Effectuer une transaction</button></td>
+                            </tr>
+                        </table>
+                    </td>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
     </ng-template>
 
     

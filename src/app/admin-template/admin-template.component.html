@@ -5,6 +5,10 @@
 </div>
 -->
 <div class="container ">
+    <div *ngIf="actionDone" class="notif"><i class="fa fa-check" aria-hidden="true"></i>
+      Actualise avec succes <span> Maintenant</span>!</div>
+      <div *ngIf="delActionDone" class="notif"><i class="fa fa-check" aria-hidden="true"></i>
+       Utilisateur {{ email }} supprimer avec succes <span> Maintenant</span>!</div>
     <div *ngIf="isAdmin == false; then showErrorsLogin else showData">
     </div>
     <ng-template #showErrorsLogin>

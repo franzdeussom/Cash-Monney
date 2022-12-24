@@ -6,7 +6,7 @@
 
 try{
 
-       $query = $conn->prepare("DELETE FROM CashMonney.MESSAGE");
+       $query = $conn->prepare("DELETE MESSAGE.id, MESSAGE.libele, MESSAGE.fk_senders FROM CashMonney.MESSAGE");
 
        if($query){
            $response = json_encode(array(

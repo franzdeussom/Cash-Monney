@@ -15,6 +15,7 @@ import { AdminTemplateComponent } from './admin-template/admin-template.componen
 import { OperationsComponent } from './accoutmanager/operations/operations.component';
 import { MessageComponent } from './message/message.component';
 import { AdminMessageComponent } from './admin-message/admin-message.component';
+import { UserModifyInfoComponent } from './user-modify-info/user-modify-info.component';
 
 export const path: Routes = [
   {
@@ -38,6 +39,10 @@ export const path: Routes = [
     component : RegisterComponent
   },
   {
+    path: 'informations/modifier',
+    component: UserModifyInfoComponent
+  },
+  {
     path: 'admin',
     component: AdminTemplateComponent
   },
@@ -46,7 +51,7 @@ export const path: Routes = [
     component: AdminLoginComponent
   },
   {
-    path: 'adminMessage',
+    path: 'admin/message',
     component: AdminMessageComponent
   },
   {
@@ -67,7 +72,8 @@ export const path: Routes = [
     AdminTemplateComponent,
     OperationsComponent,
     MessageComponent,
-    AdminMessageComponent
+    AdminMessageComponent,
+    UserModifyInfoComponent
   ],
   imports: [
     BrowserModule,

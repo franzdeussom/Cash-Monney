@@ -5,12 +5,12 @@
     width: 50%;
     height: 35vh;
     box-shadow: 1px 5px 6px 0.8px;
-    margin-left: 25%;
-    margin-right: 30%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: azure;
     border-radius: 10px;
     justify-content: center;  
-    span{
+    span.errorLog{
         position: relative;
         color: red;
         margin-top: 5%; 
@@ -19,4 +19,67 @@
         top: 25%;
         margin-left: 7%;
     } 
+    .soldeID{
+        height: 8vh;
+        width: 100%;
+        background-color: rgb(35, 35, 121);
+        color: white;
+        .ID{
+            float: left;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            left: 25px;
+        }
+        .solde{
+            float: right;
+            font-size: 20px;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            em{
+                font-size: 23px;
+                cursor: pointer;
+            }
+            em:hover{
+                font-size: 25px;
+            }
+        }
+    }
+    .btnOperation{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 15px;
+        width: 100%;
+        button{
+            width: 45%;
+            color: white;
+            padding: 10px;
+            height: fit-content;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            font-size: 18px;
+        }
+        .retrait{
+            position:absolute;
+            right: 0;
+            transition: 2s ease-in-out;
+            background-color: rgb(0, 132, 255);
+        }
+        .retrait:hover{
+            transition: 2s ease-in-out;
+            background-color: rgb(76, 119, 175);
+        }
+        .depot{
+            transition: 2s ease-in-out;
+            background-color: rgb(0, 255, 170);
+        }
+        .depot:hover{
+            transition: 2s ease-in-out;
+            background-color: rgb(76, 119, 175);
+        }
+    }
+    
 }

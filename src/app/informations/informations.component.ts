@@ -75,7 +75,10 @@ export class InformationsComponent implements OnInit {
     }, (errors)=>{
       alert(errors.message);
       console.log(errors.message);
-    })
+    });
+  }
+  modify(){
+    this.route.navigateByUrl('informations/modifier');
   }
 
 }

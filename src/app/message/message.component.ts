@@ -9,7 +9,10 @@ import { SendMessageService } from '../services/send-message.service';
 })
 export class MessageComponent implements OnInit {
   currentUsers!: any;
+  showConfirm!: boolean;
+  showErrors!: boolean;
   formMessage! : FormGroup;
+
   constructor(
     private formMsg : FormBuilder,
     private sendMesg : SendMessageService
@@ -17,6 +20,8 @@ export class MessageComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUsers = localStorage.getItem('email');
+    this.showConfirm = false;
+    this.showErrors = false;
 
     this.formMessage = this.formMsg.group({
       email : [''],
@@ -36,12 +41,17 @@ export class MessageComponent implements OnInit {
     if(this.formMessage.valid){
       const val = JSON.stringify(this.formMessage.value);
       this.sendMesg.send(val).subscribe((data : any)=>{
-        if(data.sucess){
-          alert('envoyer');
-        }
+        this.showConfirm = true;
+        setTimeout(() => {
+            this.showConfirm = false;
+        }, 2000);
+        this.formMessage.value.message('');
       });
     }else{
-      alert(this.message);
+      this.showErrors = true;
+      setTimeout(() => {
+        this.showErrors = false;
+      }, 2000);
     }
   }
 }

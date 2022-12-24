@@ -29,13 +29,18 @@
                   <td><span class="details">Telephone :</span> </td>
                   <td><span class="details info">  {{ dataUsers[0].tel }} </span> </td>
                 </tr>
+
+                <tr>
+                  <td><span class="details">Mon mot de passe :</span> </td>
+                  <td><span class="details info">  {{ dataUsers[0].mdp }} </span> </td>
+                </tr>
                 <tr>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr>
                   <td></td>
-                  <td align="center"><button>Modifier</button></td>
+                  <td align="center"><button (click)="modify()">Modifier</button></td>
                 </tr>
               </table>
               

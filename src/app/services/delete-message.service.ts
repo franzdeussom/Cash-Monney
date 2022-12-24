@@ -15,7 +15,7 @@ export class DeleteMessageService {
       return this.http.get<any>(this.baseUriApiAllDeleteMsg);
     }
 
-    deleteOne(id : number): Observable<any>{
+    deleteOne(id : any): Observable<any>{
       return this.http.post<any>(this.baseUriApiDeleteOneMsg, id, {withCredentials : true}); 
     }
 }

@@ -3,16 +3,20 @@
   </div>
 
     <ng-template #authentificationErrors>
-    <span> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
+    <span class="errorLog"> Contenue restreint pour les non identifie, connecte vous pour consulter les infos !</span>
   </ng-template>
 
   <ng-template #successLogin> 
       
-    <div *ngIf="decisionToRedirect == false">
-      a
-      <div>
-        it's work !
-      </div>
+     <div>
+        <div class="soldeID">
+            <span class="ID">Email : {{ email }} </span> <span class="solde">Solde : <em>{{ amount[0].amount }} XAF </em></span>
+              
+          </div>
+          <div class="btnOperation">
+            <button class="depot" (click)="depot()">Depot</button>
+            <button class="retrait">Retrait</button>
+          </div>
       <app-message></app-message>
     </div>
 

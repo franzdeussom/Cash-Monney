@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
+import { GetuserService } from '../services/getuser.service';
 import { LogoutService } from '../services/logout.service';
 import { UserLoginService } from '../services/user-login.service';
 import { TestService } from '../test.service';
@@ -22,11 +23,13 @@ export class LoginUsersComponent implements OnInit {
   authentificationFailed!: boolean;
   decision!: boolean;
   showTemplate!: boolean;
+  dataUsers!: Array<any>;
 
   constructor( private route: Router, 
                private authentificated: TestService,
                private form: FormBuilder,
                private authentifation: UserLoginService,
+               private dataUser: GetuserService,
                private logOut: LogoutService
                ) { }
 
@@ -41,7 +44,7 @@ export class LoginUsersComponent implements OnInit {
     });
     this.inputType = 'password';
     this.errorsOnSubmite= false;
-
+    this.getDataCurentUser();
   }
 
   get email(){
@@ -107,4 +110,23 @@ export class LoginUsersComponent implements OnInit {
       }
   } );
  }
+ getDataCurentUser(){
+    
+  var email = localStorage.getItem('email'); 
+  const val = JSON.stringify(email);
+
+/*this.dataUser.getUserData()*/
+this.dataUser.getUserData(email).subscribe((data: any)=>{
+  this.dataUsers = data;
+    if(data.errors){
+        alert('Erreur interne du server');
+    }
+}, (errors)=>{
+  alert(errors.message);
+  console.log(errors.message);
+});
+}
+transaction(){
+    this.route.navigateByUrl('operations');
+}
 }

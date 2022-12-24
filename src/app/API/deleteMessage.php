@@ -10,9 +10,9 @@ try{
     if(isset($getData) && !empty($getData)){
         $data = json_decode($getData);
 
-        $idmsg = $data->id;
+        $idmsg = (int) $data;
 
-       $query = $conn->prepare("DELETE FROM CashMonney.MESSAGE WHERE id = '$idmsg'");
+       $query = $conn->prepare("DELETE FROM CashMonney.MESSAGE WHERE id = '". $idmsg ."' ");
        $query->execute();
 
        if($query){

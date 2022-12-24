@@ -1,15 +1,24 @@
 
 <div class="container">
-    
+    <div *ngIf="delActionDone" class="notif"><i class="fa fa-check" aria-hidden="true"></i>
+         Msg id {{ idMessage }} Supprimer avec succes <span> Maintenant</span>!</div>
+         <div *ngIf="actionDone" class="notif"><i class="fa fa-check" aria-hidden="true"></i>
+            Actualise avec succes <span> Maintenant</span>!</div>
 <div class="option">
     <div class="clean">
-        <button (click)='deleteAll()' class="delete">Supprimer tous</button>
+        <button (click)='deleteAll()' class="delete">
+            <i class="fa fa-times" aria-hidden="true"></i>
+            Supprimer tous
+        </button>
    
-        <button (click)="loadMessage()" class="load">Actualise</button>
+        <button (click)="loadMessage()" class="load">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+            Actualise
+        </button>
     </div>
     <div class="msgNumber">
-        <button class="load" (click)="zuruck()">Retour</button>
-        <span> {{ listMessage.length }} Messages </span>
+        <button class="retour" (click)="zuruck()">Retour</button>
+        <span> {{ listMessage.length  }} Messages </span>
     </div>
     <table>
         <tr>
@@ -18,11 +27,11 @@
             <th>Message</th>
         </tr>
         <tr *ngFor="let data of listMessage">
-         <td> {{ data.id }}  |</td>
-         <td>| {{ data.fk_senders }} |</td>
-         <td>| {{ data.libele }} |</td>
+         <td> {{ data.id }}  </td>
+         <td>| {{ data.fk_senders }} </td>
+         <td>| {{ data.libele  }} </td>
          <td><button class="delete" (click)="deleteSelect(data.id)">Supprimer</button> </td>
         </tr>
     </table>
-</div>
+ </div>
 </div>

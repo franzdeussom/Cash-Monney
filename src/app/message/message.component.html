@@ -4,11 +4,18 @@
    <div class="message">
        
         <form action="post" [formGroup]="formMessage">
+             <div class="sendNotif" *ngIf="showConfirm">
+                    <span><i class="fa fa-check" aria-hidden="true"></i>Message Envoyer avec succes.</span>
+             </div>
+             <div class="sendNotifErrors" *ngIf="showErrors">
+                <span><i class="fa fa-check" aria-hidden="true"></i>Veuillez renseigner votre Message</span>
+         </div>
             <label for="senders">Votre adresse:</label><br>
             <input type="text" disabled="true" [value]="currentUsers" >
             <textarea name="message" id="msg" formControlName="message" placeholder="Ecrire ici..." cols="36"></textarea>
              <span *ngIf="formMessage.controls['message'].dirty && formMessage.hasError('required', 'message')"> Veuiller remlir tous les champs</span>
-            <button (click)="sendMessage()" [disabled]="!formMessage.valid">Envoyer</button>
+            <button (click)="sendMessage()">Envoyer</button>
+            
         </form>
     </div>              
 </div>

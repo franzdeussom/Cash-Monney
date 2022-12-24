@@ -1,0 +1,57 @@
+<div class="popup" *ngIf="popup">
+    <div class="overplay"></div>
+    <span class="closePopup"></span>
+    <div class="contenu">
+        <p>un contenue ...</p>
+
+        <button class="popupBtn" (click)="closePopup()">Fermer &times;</button>
+    </div>
+</div>
+<div class=" container ">
+    <div *ngIf="errorsOnSubmite" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+             Renseigner correctement tous les champs !</div>
+
+             <div *ngIf="alreadyUsers" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+                Un utilisateur posede deja cette Email !</div>
+
+                <div *ngIf="errorsServer" class="notif"><i class="fa fa-times" aria-hidden="true"></i>
+                    Erreur Interne du server !</div>
+        
+
+    <div *ngIf="registerStatut" class="notifV"><i class="fa fa-check" aria-hidden="true"></i>
+        Compte cree avec succes, connecter vous et profiter des Gains !</div>
+    <fieldset>
+        <legend> <em>Modification de compte {{ dataUsers[0].prenom }} </em></legend>
+    <form method="post" [formGroup]="registerForm" (ngSubmit)="register()">
+               <div class="notifCreateAccout" *ngIf="accountCreated">Compte Cree avec succes, connecter et vous et commencer a epargner !</div> 
+        <label for="email">Email: </label><br>
+        <input type="email"  formControlName="email" value="une valeur" id="email" class="inputEmail"><br>
+        <span *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].errors ">(Champs obligatoire !)</span><br>
+        
+        <label for="name">Nom: </label><br>
+        <input type="text"  formControlName="name" minlength="3" id="name" class="inputEmail"><br>
+        <span *ngIf="registerForm.controls['name'].dirty && registerForm.controls['name'].errors ">(Champs obligatoire !)</span><br>
+
+        <label for="surname">Prenom: </label><br>
+        <input type="text" formControlName="surname" minlength="3"  id="surname" class="inputEmail"><br>
+        <span *ngIf="registerForm.controls['surname'].dirty && registerForm.controls['surname'].errors ">(Champs obligatoire !)</span><br>
+        
+        <label for="phone">Tel: </label><br>
+        <input type="number" formControlName="tel" minlength="9" id="phone" class="inputEmail"><br>
+        <span *ngIf="registerForm.controls['tel'].dirty && registerForm.controls['tel'].errors ">(Champs obligatoire !)</span><br>
+
+        <label for="pwd">Mot de passe: </label><br>
+        <input [type]="type" formControlName="pwd" [value]="dataUsers[0].mdp" minlength="5" id="surname" class="inputEmail"><br>
+        <span *ngIf="registerForm.controls['pwd'].dirty && registerForm.controls['pwd'].errors ">(Champs obligatoire !)</span><br>
+
+        <input type="checkbox" class="checkbox" (click)="showPassword()"> Afficher le mot de passe<br>
+
+        <div class="btn">
+           <button class="loginBtn" type="submit">Modifier<i class="fas fa-check"></i></button>
+           <button class="cancel" (click)="backInfo()">Annuler</button>
+        </div>
+        <pre></pre>
+
+    </form>          
+    </fieldset>
+</div>

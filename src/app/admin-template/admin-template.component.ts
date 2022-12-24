@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { CheckAdminLoginService } from '../check-admin-login.service';
 import { DeleteUsersService } from '../services/delete-users.service';
 import { GetAllUsersService } from '../services/get-all-users.service';
@@ -17,7 +18,10 @@ export class AdminTemplateComponent implements OnInit {
     httpError!: boolean;
     error!: any;
     textLock!: string;
+    actionDone!: boolean;
+    delActionDone!: boolean;
     simpleGroup!: FormGroup;
+    email!: any;
     
   constructor(
     private getUsersFromApi: GetAllUsersService,
@@ -28,6 +32,8 @@ export class AdminTemplateComponent implements OnInit {
   ) { this.users = new Array<any>   }
 
   ngOnInit(): void {
+    this.actionDone = false;
+    this.delActionDone =false;
     this.textLock = 'Bloquer';
     this.isAdmin = false;
     if( this.checkLogIn.getTokken() == 1){
@@ -52,7 +58,12 @@ export class AdminTemplateComponent implements OnInit {
         this.error = 'Serveur Inaccessible';
         this.httpError=true;
         console.log(this.httpError);
+        
       }*/
+      this.actionDone = true;
+            setTimeout(() => {
+              this.actionDone = false;
+            }, 3000);
         }, 
         (error: any)=> {
           this.error= error;
@@ -76,7 +87,11 @@ export class AdminTemplateComponent implements OnInit {
         const val = JSON.stringify(email);
         this.deleteUser.delete(val).subscribe((data: any)=>{
           if(data.confirm==true){
-            alert('Utisateur supprimer avec success');
+            this.email = email;
+            this.delActionDone = true;
+            setTimeout(() => {
+              this.delActionDone = false;
+            }, 3000);
             this.getUsers();
           }else if(data.errors==true) {
             alert('Erreur lors de la suppression !');
@@ -89,6 +104,6 @@ export class AdminTemplateComponent implements OnInit {
       }
   }
   consulMessage(){
-    this.route.navigateByUrl('/adminMessage');
+    this.route.navigateByUrl('/admin/message');
   }
 }
